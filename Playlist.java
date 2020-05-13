@@ -210,8 +210,9 @@ public class Playlist {
 
             if (choice == -1)
                 break;
-
-            if (!playlistHasSong(album.getSongs().get(choice - 1))) {
+            else if(choice > album.getSongs().size())
+                System.out.println("No such a song.");
+            else if (!playlistHasSong(album.getSongs().get(choice - 1))) {
                 iterator.add(album.getSongs().get(choice - 1));
                 index++;
             }
